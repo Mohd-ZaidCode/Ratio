@@ -1,0 +1,377 @@
+<!-- <!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Authentication</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        {% for message in messages%}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert"><strong>Message:</strong>{{ message }} <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span>
+</button>
+</div>
+{% endfor %}
+
+
+       <h1>Welcome to ratio</h1> -->
+       {% load static %}
+            {% if user.is_authenticated %}
+            <!-- <h3>Hello {{ fname }}</h3>
+            <h4>You are succesfully loged in<h4>
+                <button type="submit"> <a href="/signout"> Log Out</a></button>
+                <button ><a href="/searchV"> videos</a></button>
+                <button><a href="upload/">Upload Video</a></button>
+ -->
+
+
+<!--Testing page-->
+
+
+                <!DOCTYPE html>
+                <html>
+                    <head>
+                        <meta charset="utf-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                        <title>Welcome</title>
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <style>
+                            body {
+                                background-color: #8c52ff;
+                                font-family: "Roboto Mono", monospace;
+                                margin: 0;
+                                padding: 0;
+                            }
+                            .logo{
+                                justify-content: left;
+                                align-items: right;
+                                width:fit-content;
+                                transition: transform 0.2s ease-in-out;
+                            }
+                            .logo:hover{
+                                transform: scale(1.1);
+                            }
+                            
+                            #header {
+                                display: flex;
+                                /* justify-content: space-evenly; */
+                                align-items: center;
+                               
+                                padding: 20px;
+                                padding-right: 40%;
+                            }
+                            #logoout button{
+                                justify-content:right;
+
+                            }
+                            
+                            #search {
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-end;
+                                width: 50%;
+                            }
+                            
+                            #search input[type=text] {
+                                padding: 10px;
+                                border-radius: 10px;
+                                border: none;
+                                width: 100%;
+                                margin-right: 10px;
+                            }
+                            
+                            #search button {
+                                background-color: #FFF;
+                                border: none;
+                                border-radius: 5px;
+                                padding: 10px;
+                                color: #020105;
+                                /* font-weight: bold; */
+                                cursor: pointer;
+                            }
+                            
+                            #content {
+                                display: flex;
+                                flex-direction: row;
+                                height: 100vh;
+                                width: 100%;
+                                justify-content: space-evenly;
+                                align-items:flex-start;
+                            }
+                            
+                            #img {
+                                
+                                display: flex;
+                                width: 500px;
+                                height: 500px;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            
+                            #img img {
+                                max-width: 90%;
+                                height: auto;
+                            }
+                           
+
+                    
+                            #buttons {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                width: 50%;
+                            }
+                            
+                            #buttons button {
+                                background-color: #ffffff;
+                                border: none;
+                                border-radius: 5px;
+                                /* padding: 50px 100px; */
+                                color: #111112;
+                                font-weight: bold;
+                                font-size: larger;
+                                cursor: unset;
+                                margin-bottom: 20px;
+                                transition: transform 0.2s ease-in-out;
+                                
+                            }
+                            #buttons button:hover {
+  transform: scale(1.1);
+}
+                          
+                            #buttons button:last-of-type {
+                                margin-bottom: 0;
+                            }
+                            
+                            #buttons a {
+                                text-decoration: none;
+                                color: #8c52ff;
+                            }
+                            #logout{
+                              
+                                border: none;
+                                border-radius: 5px;
+                                padding: 10px;
+                                color: #020105;
+                                /* font-weight: bold; */
+                                cursor: pointer;
+                                display: flex;
+                                flex-direction:row-reverse;
+
+                            }
+                           
+
+.button:hover {
+  transform: scale(1.1);
+}.log{
+    background-color:#ffdf2b;
+    width: 120px; 
+    height: 40px;
+    border: none;
+    border-radius: 8%;
+    color: rgb(19, 2, 2);
+    font-weight: bolder;
+    font-size: large;
+    
+}
+
+
+.log:hover{
+  
+  transform: scale(1.1);
+}
+.dp{
+  
+
+    border: none;
+    font-weight: bold;
+}
+.dp:hover{
+  
+  transform: scale(1.1);
+
+
+}#logo .image{
+    transform: scale(1.1);
+}
+                        </style>
+                    </head>
+                    <body>
+                        <div id="header">
+                            <div id="logo" >
+                               <a href="/profile"> <img id="dp" src="{% static 'images/profile.png' %}"alt="Logo" width="30%" height="30%" style="padding-right: 0%;"></a>
+                            </div><h1 style="font-weight:900; position: absolute; left: 150px; ">Hello,{{ fname }}</h1>
+                       
+                            <div id="search">
+                                <input type="text" placeholder="Search...">
+                                <a href="https://www.google.co.in/"><button style="padding-top:6px;padding-bottom: 6px;">🔍</button> </div> </div>
+                           
+                        </div>
+                        <div id="logout" style="align-items:calc(20%);  ">
+                            <a style="align-content: right;" href="/signout"><button class="log" style="margin-right: 8px;" >⬆️Log Out</button></a>
+
+                            <a style="align-content: right;" href="https://forms.office.com/Pages/DesignPageV2.aspx?subpage=creationv2"><button class="log"style="margin-right: 8px;" >📄Test</button></a>
+
+                            <a style="align-content: right;" href="https://keep.google.com/u/1/#home"><button class="log" style="margin-right: 8px;">📚Notes</button></a>
+
+                           
+                        </div><br>
+                        <div id="content">
+                            <div id="img">
+                                <img src="{% static 'images/homepage.png' %}" alt="Image"width="300%" height="300%">
+                            </div>
+                            <div id="buttons">
+                                <a  style="color: #020105;"href="upload/"> <button style="padding: 30px 150px;"><img style="align-self:left;" src="{% static 'images/uploadsb.png' %}"alt="Logo" width="30%" height="30%">Upload Video</button></a><br>
+
+
+                                <a  style="color: #020105;" href="/searchV"><button style="padding: 30px 150px;"><img src="{% static 'images/videosb.png' %}"alt="Logo" width="30%" height="30%"> videos</button></a><br>
+                                <a style="color: #020105;" href="/chatapp"> <button style="padding: 30px 150px;"><img src="{% static 'images/chatsb.png' %}"alt="Logo" width="30%" height="30%">Chat</button></a>
+                            </div>
+                        </div>
+                    </body>
+                </html>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+        {% else %}
+       <!-- <button type="submit"><a href="/signup"> Signup</a></button>
+       <button type="submit"> <a href="/signin"> Login</a></button> -->
+
+
+
+
+
+
+
+       <!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Authentication</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+    <body>
+
+<style> 
+
+body {
+        /* text-align: center; */
+        background-image: url("{% static 'images/sinlogbg.png' %}");
+        background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+      display: flex;
+      justify-content: flex-end;
+      height: 100vh;
+    }
+  .box {
+ width: 30%;
+  height: 45%;
+  background-color: rgb(244, 226, 246);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:flex-start;
+  padding: 5px;
+  transform: translate(-50%, 50%);
+  border-radius: 4%;
+}
+    
+    .heading {
+   font-size: 33px;
+  font-weight: bold;
+  font-family:  'Roboto Mono', monospace;
+  padding:5%;
+  padding-bottom: 2%;
+ 
+    }
+    .line {
+      width: 100%;
+  height: 2px;
+  background-color: #000;
+  margin-top: 1px;
+  margin-bottom: 10px;}
+
+.container button {
+  padding: 5px 10px;
+  margin: 0px;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  margin-right: 20px;
+  filter: brightness(110%);
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image:hover {
+  opacity: 0.8;
+}
+
+
+
+.my-link {
+  color: rgb(243, 240, 240);
+}
+
+button {
+
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px #999;
+  width: 110px;
+}
+</style>
+{% for message in messages%}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert"><strong>Message:</strong>{{ message }} <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span>
+</button>
+</div>
+{% endfor %}
+  
+      
+      
+
+<div class="container">
+    <div class="box">
+      <h2 class="heading">Welcome to Ratio</h2>
+      <p style="color: #8c52ff;font-family:  'Roboto Mono', monospace;">HAVE FUN WHILE LEARNING!</p>
+      <div class="line"></div>
+      <p style="margin-top: 30px;font-family:  'Roboto Mono', monospace;">New to Ratio?</p>
+      <a href="/signup" class="my-link"><button type="button" class="btn btn-warning" style="font-weight:bold; color: #FFF;">Sign Up</button></a>
+      <p style="margin-top: 30px;font-family:  'Roboto Mono', monospace;">Already have an account?</p>
+      <a href="/signin" class="my-link"><button type="button" class="btn btn-warning" style="font-weight:bold; color: #FFF;">Log In</button></a>
+    </div>
+  </div>
+  {% endif %}     
+
+
+        <script src="" async defer></script>
+    </body>
+</html>
+ 

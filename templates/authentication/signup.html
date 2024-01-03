@@ -1,0 +1,209 @@
+<!-- <!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Signup</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+   -->
+    <!--Body of html page started from here-->
+<!--   
+    <body>
+        {% for message in messages%}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert"><strong>Message:</strong>{{ message }} <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span>
+</button>
+</div>
+{% endfor %}
+
+
+
+
+       <h1>Sign Up</h1>
+
+       {% for message in messages%}
+       <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert"><strong>Message:</strong>{{ message }} <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span>
+</button>
+</div>
+{% endfor %}
+
+<div class="container">
+    <div class="left-panel">
+
+    </div>
+    <div class="right-panel"> -->
+
+<!-- form started from here -->
+       <!-- <form action="/signup" method="post">
+       {% csrf_token %} -->
+
+<!-- username of the user-->
+
+<!-- <label for="">username: </label><br>
+<input type="text" id="username" name="username" placeholder="Username" required><br><br> -->
+
+<!--First name of the user-->
+
+        <!-- <label for="">First Name: </label><br>
+        <input type="text" id="fname" name="fname" placeholder="Name" required><br><br> -->
+
+<!--last name of the user-->
+
+        <!-- <label for="">Last Name: </label><br>
+        <input type="text" id="lname" name="lname" placeholder="Last Name" required><br><br>
+         -->
+
+<!--Email of the user-->
+<!-- 
+<label for="">Email: </label><br>
+<input type="email" id="email" name="email" placeholder="@email.com" required><br><br> -->
+
+
+<!--Password of the user-->
+
+<!-- <label for="">password: </label><br>
+<input type="password" id="pass1" name="pass1" placeholder="Create a password" required><br><br> -->
+
+<!--Confirm passwrod -->
+<!-- 
+<label for="">Confirm password: </label><br>
+<input type="password" id="pass2" name="pass2" placeholder="Confirm password" required><br><br> -->
+
+
+<!--Submit button-->
+<!-- <button type="Submit">Signup</button>
+        
+</form>
+</div>
+</div>
+        
+        <script src="" async defer></script>
+    </body>
+</html> -->
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Signup</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Roboto Mono', monospace;
+            }
+		 label {
+                display: block;
+                margin-bottom: 10px;
+            }
+            .container {
+                display: flex;
+                height: 100vh;
+            }
+
+            .left-panel {
+                flex: 1;
+                background-color: #8c52ff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .left-panel img {
+                max-width: 100%;
+                height: auto;
+            }
+            .right-panel {
+                flex: 1;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .right-panel h1 {
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+            .right-panel hr {
+                width: 80%;
+                margin-bottom: 2rem;
+            }
+            .right-panel form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .right-panel label {
+                font-size: 1rem;
+                font-weight: bold;
+                margin-bottom: 10 px;
+            }
+            .right-panel input {
+                padding: 0.5rem;
+                border-radius: 0.3rem;
+                border: none;
+                margin-bottom: 1rem;
+                width: 80%;
+                max-width: 400px;
+            }
+            .right-panel button {
+                padding: 0.5rem 1.5rem;
+                border-radius: 0.3rem;
+                border: none;
+                background-color: #8c52ff;
+                color: rgb(242, 238, 238);
+                font-size: 1rem;
+                /* font-weight: bold; */
+                cursor: pointer;
+            }
+ input[type="text"], input[type="email"], input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid black;
+                margin-bottom: 20px;
+                box-sizing: border-box;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left-panel">
+                <img src="{% static 'images/logo.png' %}"alt="Your Image">
+            </div>
+            <div class="right-panel">
+                <h1>Sign Up</h1>
+                <p style="color: #8c52ff;">Create account</p>
+                <hr>
+                <form action="/signup" method="post">
+                    {% csrf_token %}
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" placeholder="First Name" required>
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <label for="pass1">Password:</label>
+                    <input type="password" id="pass1" name="pass1" placeholder="Create a password" required>
+                    <label for="pass2">Confirm Password:</label>
+                    <input type="password" id="pass2" name="pass2" placeholder="Confirm password" required>
+                     {% for message in messages%}
+       <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert"><strong>Message:</strong>{{ message }} <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span>
+</button>
+</div>
+{% endfor %}
+ <button type="submit">Signup</button>
+            </form>
+        </div>
+    </body>
+</html>

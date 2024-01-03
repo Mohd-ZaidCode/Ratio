@@ -1,0 +1,29 @@
+{% extends 'public/base.html' %}
+{% load static %}
+
+{% block additional_head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'public/css/custom.css' %}">
+<style>
+    body {
+        background-image: url("{% static 'public/19.jpg' %}");
+        font-family: 'Roboto Mono', monospace;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<hr class="hr">
+    <div class="container mt-5">
+        <div id="message"></div>
+        <div class="row" id="room-row">
+            
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-3" id="next-position">
+            
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'public/base.html' %}
+
+{% block additional_head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'public/css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'public/css/custom.css' %}">
+
+<style>
+body {
+background-image: url("{% static 'public/17.jpg' %}");
+background-repeat: no-repeat;
+background-position: center;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<hr class="hr">
+<div class="container">
+<div class="row d-flex">
+<div class="col-lg-5 mt-5">
+<h2 class="header-text">Welcome to Ratio's Community Chat<3</h4>
+<p class="opening-text mt-3 mb-3">A place to meet new people, join various communities and grow and learn together to gain new skills across the board!</p>
+</div>
+</div>
+</div>
+{% endblock %}

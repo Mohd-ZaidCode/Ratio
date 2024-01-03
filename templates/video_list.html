@@ -1,0 +1,333 @@
+<!-- upload_video.html -->
+<!-- <h1>Upload a video</h1>
+<button type="submit"><a href="upload">Upload</a></button> -->
+
+<!-- <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+</form> -->
+
+<!-- video_list.html -->
+<!-- <h1>Video list</h1>
+{% for video in videos %}
+    <div>
+        <h2>{{ video.title }}</h2>
+        <video controls>
+            <source src="{{ video.video.url }}" type="{{ video.video.content_type }}">
+        </video>
+    </div>
+{% endfor %} -->
+
+<!-- <!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Uploaded Videos</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+    <body>   
+
+<style> 
+
+body {
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtEzwAXDemmvmFQrhFjZ7Xe6gydb-sJRNeCg&usqp=CAU");
+background-size: cover;
+background-repeat: no-repeat;
+margin-top: 10px;
+margin-left: 80px;
+
+}
+
+.image {
+width: 200;  height: 300;
+  margin-right: 20px;
+  filter: brightness(110%);
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  position: right;
+  
+}
+
+.right {
+  justify-content: right;
+}
+</style> -->
+
+<!-- body {
+  /* text-align: center; */
+background-image: url("https://static.vecteezy.com/system/resources/previews/004/708/652/non_2x/simple-purple-background-flat-purple-gradation-wavy-background-vector.jpg");
+background-size: cover;
+background-repeat: repeat;
+background-position: center;
+margin-left: 180px;
+margin-top: 30px;
+}
+
+</style> -->
+
+
+<!-- <button class="btn btn-dark" style="margin-bottom: 20px;
+box-shadow: 2px 2px 5px #999;width: 90px;"><a href="/upload/">Back</a></button>
+<img  src="https://img.freepik.com/premium-vector/video-tutorials-background-vector-illustration-watching-streaming-online-computer-about-education-knowledge-web-banner-brochures-poster-book-cover_2175-1333.jpg" class="image">
+
+<h3 style="font-family: 'Times New Roman', Times, serif;font-weight:bold;">Find your uploaded videos here.</h3>
+{% for video in videos %}
+  <div>
+    <h3 style="font-family: 'Times New Roman', Times, serif;">{{ video.title }}</h3>
+    <video width="300" height="250" controls>
+      <source src="{{ video.video.url }}" type="video/mp4">
+    </video>
+    <p style="color:white;">{{ video.caption }}</p>
+    <form method="POST" action="{% url 'video_list' %}">
+      {% csrf_token %}
+      <input type="hidden" name="video_id" value="{{ video.id }}">
+      <button type="submit" class="btn btn-danger">Delete video</button>
+    </form>
+  </div>
+
+{% endfor %}
+
+</body></html> -->
+
+  <!-- <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Video Upload</title>
+      <style>
+        body {
+          background-color: #121212;
+          font-family: Arial, sans-serif;
+          color: #fff;
+        }
+        h2 {
+          font-size: 28px;
+          margin-top: 0;
+        }
+        .upload-container {
+          width: 600px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #663399;
+          border-radius: 10px;
+          box-shadow: 0 0 10px #000;
+        }
+        .video-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+        video {
+          max-width: 100%;
+        }
+        form {
+          display: flex;
+          justify-content: center;
+        }
+        input[type="submit"] {
+          background-color: #fff;
+          color: #663399;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+        }
+        input[type="submit"]:hover {
+          background-color: #663399;
+          color: #fff;
+        }
+      </style>
+    </head>
+   
+    <body>
+         {% for video in videos %}
+      <div class="upload-container">
+        <h2>Upload Video</h2>
+        <div class="video-container">
+          <video width="320" height="240" controls>
+            <source src="{{ video.video.url }}" type="video/mp4">
+          </video>
+        </div>
+        <form method="POST" action="{% url 'video_list' %}">
+          {% csrf_token %}
+          <input type="hidden" name="video_id" value="{{ video.id }}">
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+      {% endfor %}
+    </body>
+  </html>
+
+
+  <upload_video.html -->
+<!-- <h1>Upload a video</h1>
+<button type="submit"><a href="upload">Upload</a></button> -->
+
+<!-- <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+</form> -->
+
+<!-- video_list.html -->
+<!-- <h1>Video list</h1>
+{% for video in videos %}
+    <div>
+        <h2>{{ video.title }}</h2>
+        <video controls>
+            <source src="{{ video.video.url }}" type="{{ video.video.content_type }}">
+        </video>
+    </div>
+{% endfor %} -->
+
+
+<!-- 
+<button><a href="/upload/">Back</a></button>
+{% for video in videos %}
+  <div>
+    <h2>{{ video.title }}</h2>
+    <video width="320" height="240" controls>
+      <source src="{{ video.video.url }}" type="video/mp4">
+    </video>
+    <h3>{{ video.caption }}</h3>
+    <form method="POST" action="{% url 'video_list' %}">
+      {% csrf_token %}
+      <input type="hidden" name="video_id" value="{{ video.id }}">
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+
+{% endfor %} -->
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Uploaded Videos</title>
+	<style>
+		body {
+      background-image: url("{% static 'images/videolist.png' %}");
+	  background-color: #c3a5ff;
+			font-family: "Roboto Mono", monospace;
+      background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-left: 40px;
+  /* background-repeat: repeat-y; */
+		}
+		
+		.video-container {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			background-color: rgb(244, 205, 244);
+      text-align: left;
+      height: 200px;
+      width: 600px;
+      border-radius: 10px;
+		}
+		.video-container video {
+			max-width: 100%;
+      text-align: left;
+		}
+		.video-details {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+      text-align: left;
+
+		}
+		.video-title {
+			font-size: 20px;
+			font-weight: bold;
+			margin-bottom: 10px;
+			text-align: left;
+      text-align: left;
+
+		}
+		.video-caption {
+			font-size: 16px;
+			text-align: left;
+			flex-grow: 1;
+      text-align: left;
+
+		}
+		.delete-form {
+			text-align: center;
+			margin-top: 10px;
+      text-align: left;
+
+		}
+  
+    .back{
+	background-color: #e8e3ea;
+	color: #ffffff;
+	padding: 5px 5px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 20px;
+  text-align: left;
+
+}
+
+button:hover {
+	background-color: #27053b;
+}
+
+.delete-button {
+			background-color: red;
+			color: #ffffff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+      text-align: left;
+
+		}
+
+	</style>
+</head>
+<body>
+	<button class="back" style="margin-top: 20px ;">
+  <a href="/"><img src="https://cdn-icons-png.flaticon.com/512/7133/7133312.png" width="40" height="40"></a></button>
+  <button class="back" style="margin-top: 20px ;">
+  <a href="/upload"><img src="https://cdn-icons-png.flaticon.com/512/93/93634.png" width="40" height="40"></a></button>
+
+  <b style="font-size: xx-large;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Find all your uploaded videos here.</b>
+  <!-- <p style="text-align: center;">Find all your uploaded videos here.</p> -->
+	
+	{% for video in videos %}
+	
+		<div class="video-container">
+			<div class="video-details">
+				<div class="video-title">{{ video.title }}</div>
+				<div class="video-caption">{{ video.caption }}</div>
+				<form method="POST" class="delete-form" action="{% url 'video_list' %}">
+					{% csrf_token %}
+					<input type="hidden" name="video_id" value="{{ video.id }}">
+					<button type="submit" class="delete-button">Delete</button>
+				</form>
+			</div id="Video">
+			<video controls>
+				<source src="{{ video.video.url }}" type="video/mp4">
+			</video>
+		</div>
+	{% endfor %}
+</body>
+</html>
